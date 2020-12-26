@@ -1,0 +1,25 @@
+<section [ngClass]="{'bg-dark': menuState}">
+    <div class="container">
+        <div class="title">
+            <h2>Stay in Fliland</h2>
+            <p>12 + stays</p>
+        </div>
+        <div class="card-content">
+            <div class="card" *ngFor="let item of allPlace">
+                <div class="card-header">
+                    <img src={{item.photo}} alt="foto del lugar">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <p class="superHost" *ngIf="item.superHost;else sHost">Super Host</p>
+                        <ng-template #sHost><p class="text-gris82">Private Room</p></ng-template>
+                        <p class="text-gris82">{{item.type}}</p>
+                        <p class="text-gris82" *ngIf="item.beds"> {{item.beds}} beads</p>
+                        <p><i class="fas fa-star"></i> {{item.rating}}</p>
+                    </div>
+                    <p>{{item.title}}</p>
+                </div>
+            </div>
+        </div>
+    </div>   
+</section>

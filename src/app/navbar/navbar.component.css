@@ -1,0 +1,122 @@
+nav{
+    background-color: white;
+    position: absolute;
+    width: 100%;
+}
+.navbar{
+}
+    .navbar-header{
+        display: flex;
+        align-items: center;
+    }
+        .navbar-img{
+            flex: 13 1 auto;
+        }
+        .navbar-options{
+            flex: 1 1 auto;
+            display: flex;
+            border-radius: 15px;
+            align-items: center;
+            width: 200px;
+            justify-content: space-evenly;
+            box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.226);
+        } 
+            .options:last-child{ 
+                font-size: 20px;
+            }
+.navbar-body{
+    padding-top: 44px;    
+    padding-bottom: 40px;
+}
+.navbar-body-options{
+    display: flex;    
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.226);    
+    border-radius: 15px;
+    height: 55px;
+}
+    .navbar-body-options .options{
+       width: 33.3%;
+    }
+    .navbar-body-options .options:hover{
+        border: 1px solid var(--negro); 
+        border-radius: 15px;
+    }
+    .option1,
+    .option2{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 25px;
+    }
+    .option1 p,
+    .option2 p{
+        margin-top: 5px;
+        margin-bottom: 0%;
+    }
+
+    .navbar-body-options .options:last-child{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+.option-select{
+    display: flex;
+    margin-top: 30px;
+}  
+.option-select .options{
+    width: 33.3%;
+}
+    .location{
+        display: flex;
+        align-items: center;
+        padding-left: 25px;
+        color: var(--gris-oscuro);
+    }
+        .location p{
+            margin-left: 6px;
+        }
+
+    .person{
+        font-size: 16px;
+        padding-left: 25px;
+    }
+        .person div{
+            display: flex;
+            align-items: center;
+            width: 20%;
+            justify-content: space-between;
+        }
+            .person p{
+                margin-top: 4px;
+                margin-bottom: 10px;
+            }
+            .person div button{
+                border: 1px solid #828282;
+                color: #828282;
+                border-radius: 4px;
+                background: none;
+                width: 23px;
+                height: 23px;
+            }
+
+.btn{
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    color: white;
+    width: 127px;
+    height: 48px;
+    border-radius: 13px;
+    justify-content: space-evenly;
+    font-size: 16px;
+}
+.btn:hover{
+   background-color: #d64646;
+}
+.btn p{
+    margin: 0%;
+}
+
+

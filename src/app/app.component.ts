@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'windbnb-master';
+  
+  menuState:any
+  getMenuState(e){
+    console.log(e)
+    this.menuState = e
+  }
 }

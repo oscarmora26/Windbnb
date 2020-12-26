@@ -1,0 +1,70 @@
+<nav>
+    <div class="navbar container">
+        <div class="navbar-header" id="navbar-header" *ngIf="menuState; else elseMenu">
+            <div class="navbar-img">
+                <img src="../../assets/logo.png" alt="">
+            </div>       
+            <div class="navbar-options" (click)="showCloseMenu()">
+                <div class="options"><p>Helsinki, Filand</p></div>                   
+                <div class="options"><p>Add Guues</p></div>
+                <div class="options text-rojo"><i class="fas fa-search"></i></div>
+            </div>
+        </div> 
+        <ng-template #elseMenu>       
+            <div class="navbar-body" id="navbar-body">
+                <div class="navbar-body-options">
+                    <div class="options option1">
+                        <strong>Location</strong>
+                        <p>Helsinki, Filand</p>
+                    </div>
+                    <div class="options option2">
+                        <strong>Guest</strong>
+                        <p>Add guest</p>
+                    </div>
+                    <div class="options" (click)="showCloseMenu()">
+                        <button class="btn bg-rojo"> 
+                            <i class="fas fa-search"></i>
+                            <p>Search</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="option-select">
+                    <div class="options">
+                    <div class="location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Helsinki, Filand</p>
+                    </div>
+                        <div class="location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Helsinki, Filand</p>
+                    </div>
+                        <div class="location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Helsinki, Filand</p>
+                    </div>
+                    </div>
+                    <div class="options">
+                        <div class="person">
+                            <strong>Adult</strong>
+                            <p class="text-gris">Ages 13 or above</p>
+                            <div>
+                                <button>+</button>
+                                <p>0</p>
+                                <button>+</button>
+                            </div>
+                        </div>
+                        <div class="person">
+                            <strong>Children</strong>
+                            <p class="text-gris">Ages 2-12</p>
+                            <div>
+                                <button>+</button>
+                                <p>0</p>
+                                <button>+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+         </ng-template>
+    </div>
+</nav>

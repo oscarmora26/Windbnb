@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --negro:#333333;
+    --gris:#BDBDBD;
+    --rojo:#EB5757;
+    --gris-oscuro:#4F4F4F;
+    --gris82:#828282;
+}
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+.container{
+    width: 87%;
+    margin: auto;
+}
+.text-rojo{
+    color: var(--rojo);
+}
+.text-gris{
+    color: var(--gris);
+}
+.text-negro{
+    color: var(--negro);
+}
+.text-gris82{
+    color: var(--gris82);
+}
+.bg-rojo{
+    background-color: var(--rojo);
+}
