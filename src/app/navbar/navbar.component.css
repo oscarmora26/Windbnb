@@ -8,6 +8,7 @@ nav{
     .navbar-header{
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
     }
         .navbar-img{
             flex: 13 1 auto;
