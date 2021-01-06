@@ -31,3 +31,9 @@ html {
 .bg-rojo{
     background-color: var(--rojo);
 }
+
+@media(max-width: 420px){
+    .container{
+        width: 96%;
+    }
+}

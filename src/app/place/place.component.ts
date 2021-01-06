@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ComunicationComponentService } from '../services/comunication-component.service';
 import { PlaceService } from '../services/place.service'
 @Component({
   selector: 'app-place',
@@ -8,18 +9,22 @@ import { PlaceService } from '../services/place.service'
 export class PlaceComponent implements OnInit {
 
   allPlace: any = null
-  @Input('menuState') menuState:any
-  constructor(private _placeService:PlaceService) {
-      this.getPlace()
-   }
-
-  ngOnInit(): void {
+  placeFilter: any
+  @Input('menuState') menuState: any
+  constructor(private _placeService: PlaceService, private _comunicationService: ComunicationComponentService) {
+    this.getPlace()
   }
 
-  async getPlace(){
+  ngOnInit(): void {
+    this._comunicationService.enviarFiltroObservable.subscribe(res => {
+      this.placeFilter = this.allPlace.filter(x => x.city == res.city && x.maxGuests >= res.maxGuests)
+    })
+  }
+
+  async getPlace() {
     this._placeService.getPlace().subscribe(res => {
-      console.log(res)
       this.allPlace = res
+      this.placeFilter = res
     })
   }
 }

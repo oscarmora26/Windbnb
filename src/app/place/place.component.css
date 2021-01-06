@@ -7,14 +7,20 @@
     padding-top: 64px;
 }
 .card-content{
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
+
+    column-count: 3;
+    gap: 20px;
 }
     .card{
-        width: 32%;
+        /* width: 32%;
         margin-top: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 10px; */
+
+        display: inline-block;
+        width: 100%;
     }
         .card-header{
             border-radius: 24px;
@@ -47,16 +53,31 @@
     padding: 3px 10px 3px 10px;
     color: #4F4F4F;
     font-weight: bold;
+    text-align: center;
 }
 
 @media (max-width: 768px){
-    .card{
+    .card-content{
+        column-count: 2;
+    }
+
+    /* .card{
         width: 48%;
-    }    
+    }     */
 }
 
 @media(max-width: 576px){
-    .card{
+    .card-content{
+        column-count: 1;
+    }
+
+    /* .card{
         width: 99%;
+    } */
+}
+
+@media(max-width: 420px){
+    .title{
+        padding-top: 115px;
     }
 }

@@ -10,7 +10,6 @@ export class AppComponent {
   
   menuState:any
   getMenuState(e){
-    console.log(e)
     this.menuState = e
   }
 }

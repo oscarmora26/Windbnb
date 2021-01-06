@@ -5,8 +5,8 @@
                 <img src="../../assets/logo.png" alt="">
             </div>       
             <div class="navbar-options" (click)="showCloseMenu()">
-                <div class="options"><p>Helsinki, Filand</p></div>                   
-                <div class="options"><p>Add Guues</p></div>
+                <div class="options"><p>{{city != null ? country +" ,"+ city: "Add location"}}</p></div>                   
+                <div class="options"><p>{{adult + children == 0 ? "Add Guues": adult + children}}</p></div>
                 <div class="options text-rojo"><i class="fas fa-search"></i></div>
             </div>
         </div> 
@@ -15,13 +15,13 @@
                 <div class="navbar-body-options">
                     <div class="options option1">
                         <strong>Location</strong>
-                        <p>Helsinki, Filand</p>
+                        <p id="addLocation">{{city != null ? country +" ,"+ city: "Add location"}}</p>
                     </div>
                     <div class="options option2">
                         <strong>Guest</strong>
-                        <p>Add guest</p>
+                        <p>{{adult + children == 0 ? "Add Guues": adult + children}}</p>
                     </div>
-                    <div class="options" (click)="showCloseMenu()">
+                    <div class="options" (click)="search()" (click)="showCloseMenu()" >
                         <button class="btn bg-rojo"> 
                             <i class="fas fa-search"></i>
                             <p>Search</p>
@@ -30,36 +30,40 @@
                 </div>
                 <div class="option-select">
                     <div class="options">
-                    <div class="location">
+                        <div class="location" (click)="addCity('Helsinki','Finland')">
                             <i class="fas fa-map-marker-alt"></i>
-                            <p>Helsinki, Filand</p>
-                    </div>
-                        <div class="location">
+                            <p>Helsinki, Finland</p>
+                        </div>     
+                        <div class="location" (click)="addCity('Turku','Finland')">
                             <i class="fas fa-map-marker-alt"></i>
-                            <p>Helsinki, Filand</p>
-                    </div>
-                        <div class="location">
+                            <p>Turku, Finland</p>
+                        </div>
+                        <div class="location" (click)="addCity('Vaasa','Finland')">
                             <i class="fas fa-map-marker-alt"></i>
-                            <p>Helsinki, Filand</p>
-                    </div>
+                            <p>Vaasa, Finland</p>
+                        </div>
+                        <div class="location" (click)="addCity('Oulu','Finland')">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Oulu, Finland</p>
+                        </div>
                     </div>
                     <div class="options">
                         <div class="person">
                             <strong>Adult</strong>
                             <p class="text-gris">Ages 13 or above</p>
                             <div>
-                                <button>+</button>
-                                <p>0</p>
-                                <button>+</button>
+                                <button (click)="adult = adult - 1">-</button>
+                                <p>{{adult}}</p>
+                                <button (click)="adult = adult + 1">+</button>
                             </div>
                         </div>
                         <div class="person">
                             <strong>Children</strong>
                             <p class="text-gris">Ages 2-12</p>
                             <div>
-                                <button>+</button>
-                                <p>0</p>
-                                <button>+</button>
+                                <button (click)="children = children - 1">-</button>
+                                <p>{{children}}</p>
+                                <button (click)="children = children + 1">+</button>
                             </div>
                         </div>
                     </div>
